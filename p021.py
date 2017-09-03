@@ -25,6 +25,15 @@ def factors_of(n) :
         if n % i == 0:
             yield i
 
+def compositeFactors(primeFacList):
+    print(primeFacList)
+    for i in range(2,len(primeFacList)):
+        print(i)
+        sl = list(combinations(primeFacList,i))
+        for k in sl:
+            yield mult(k)
+        print(sl)
 
-for n in range(2, 10000):
-    print(list(prime_factors_of(n)))
+for n in range(2, 20):
+     compositeFactors(prime_factors_of(n))
+#    print(list(prime_factors_of(n)))
